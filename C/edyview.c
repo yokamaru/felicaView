@@ -19,11 +19,13 @@ int main(int argc, char* argv[])
 
     if (f && !felica_read_single(f, FELICA_SERVICE_EDY_HISTORY, 0, 0, data))
     {
-        printf("%5d Yen\n", (data[14] << 8) + data[15]);
+        printf("Edy:\t%5d Yen\n", (data[14] << 8) + data[15]);
     }
     else
     {
         fprintf(stderr, "Edy not found.\n");
+        free(f);
+        pasori_close(p);
         return EXIT_FAILURE;
     }
 
