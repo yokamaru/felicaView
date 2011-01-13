@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     }
     else
     {
-        fprintf(stderr, "Failed to find your edy.\n");
+        fprintf(stderr, "Edy not found.\n");
         return EXIT_FAILURE;
     }
 
